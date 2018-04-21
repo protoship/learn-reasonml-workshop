@@ -4,8 +4,8 @@
   "name": "learn-reasonml-workshop",
   "version": "0.1.0",
   "sources": {
-    "dir" : "src",
-    "subdirs" : true
+    "dir": "exercises",
+    "subdirs": true
   },
   "package-specs": {
     "module": "commonjs",
@@ -13,10 +13,10 @@
   },
   "suffix": ".bs.js",
   "bs-dependencies": [
-      // add your dependencies here. You'd usually install them normally through `npm install my-dependency`. If my-dependency has a bsconfig.json too, then everything will work seamlessly.
+    // add your dependencies here. You'd usually install them normally through `npm install my-dependency`. If my-dependency has a bsconfig.json too, then everything will work seamlessly.
   ],
   "warnings": {
-    "error" : "+101"
+    "error": "+101"
   },
   "namespace": true,
   "refmt": 3
