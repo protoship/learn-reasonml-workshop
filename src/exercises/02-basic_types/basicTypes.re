@@ -66,11 +66,11 @@ let floatFour = 4.;
   value of the last statement in that function.
  */
 /* let intAverage = (x, y) => failwith("For you to implement"); */
-let intAverage = (x, y) => (x + y) / 2;
+let intAverage = (x, y) => failwith("For you to implement");
 
 /* let float_average : float -> float -> float */
 /* let floatAverage = (x, y) => failwith("For you to implement"); */
-let floatAverage = (x, y) => (x +. y) /. 2.;
+let floatAverage = (x, y) => failwith("For you to implement");
 
 /*
   The following expression computes the average of 10 and 20:
@@ -137,25 +137,11 @@ let () = {
   In words: [equal] takes two [int]s and returns a [bool]. The following line
   is applying that function to two inputs, [5] and [int_average 5 5].
  */
-print_endline("");
-
-print_endline("==============Begin Test==============");
-
-print_endline(
-  "Testing intAverage... " ++ string_of_bool(intAverage(5, 5) == 5),
-);
-
-print_endline(
-  "Testing floatAverage... " ++ string_of_bool(floatAverage(5., 5.) == 5.),
-);
-
-print_endline(
-  "Testing floatAverage... " ++ string_of_bool(floatAverage(5., 10.) == 7.5),
-);
-
-print_endline("===============End Test===============");
-
-print_endline("");
+Test.runAll([
+  (intAverage(5, 5) == 5, "intAverage"),
+  (floatAverage(5., 5.) == 5., "floatAverage"),
+  (floatAverage(5., 10.) == 7.5, "floatAverage"),
+]);
 /*
   .rei files
   ==========

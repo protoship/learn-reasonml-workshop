@@ -4,7 +4,7 @@
   "name": "learn-reasonml-workshop",
   "version": "0.1.0",
   "sources": {
-    "dir": "exercises",
+    "dir": "src",
     "subdirs": true
   },
   "package-specs": {
