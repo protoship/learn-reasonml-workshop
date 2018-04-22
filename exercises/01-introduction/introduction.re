@@ -1,25 +1,35 @@
-/* Welcome to Jane Street's OCaml challenges!
+/*
+  Hello,
 
-   This exercise is just meant to familiarize you with the system.
+  Reason is not a new language. It is syntactic sugar for the OCaml language
+  created in 1996. The new Reason syntax will look familiar to those who have
+  programmed in Javascript.
 
-   Write OCaml code using your favorite text editor; if you aren't already
-   committed to one, we recommend Visual Studio Code.
+  These challenges are originally from the workshop run by Jane Street to
+  teach OCaml. It was ported over to Reason with the help of `refmt` (Reason
+  format) binary that helps you convert to/from Reason/OCaml syntax.
 
-   To compile your code and run inline tests, run
+  This exercise is to familiarize you with, writing code - compile - run cycle.
 
-   [jbuilder runtest]
+  To compile your code, run in a terminal session in the root directory
 
-   in a terminal session in this problem's directory.
+    $ npm run build
 
-   (There are several other ways to invoke [jbuilder] that we will encounter
-   later. For an introduction, watch the excellent video tutorial about jbuilder
-   linked in the [README] in this repository's base directory).
+  You should see a compilation error because it's missing the end quote. Add
+  the end quote and re-run. You should see that the code compiled and ran!
 
-   Try building this code.
+  You can also execute code in utop directly. Try pasting this line of code
+  into `rtop` and running it there.
 
-   You should see a compilation error because it's missing the end quote. Add
-   the end quote and re-run. You should see that the code compiled and ran!
+    $ rtop
 
-   You can also execute code in utop directly. Try pasting this line of code
-   into utop and running it there. */
+  With `Ctrl-d` you can exit an rtop session.
+
+  For convenience you can build whenever you change the code by running the
+  compiler in watch mode. For that, run
+
+    $ npm run start
+
+  Try it out and see how it automatically builds code for you.
+ */
 let () = print_endline("Hello, World!");
