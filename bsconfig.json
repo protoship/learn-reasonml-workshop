@@ -16,6 +16,7 @@
     // add your dependencies here. You'd usually install them normally through `npm install my-dependency`. If my-dependency has a bsconfig.json too, then everything will work seamlessly.
   ],
   "warnings": {
+    "number": "-26-27-32-39-34-37",
     "error": "+101"
   },
   "namespace": true,
