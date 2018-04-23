@@ -1,1 +1,1 @@
-let min_and_max: list(int) => (int, int);
+let minAndMax: list(int) => (int, int);
