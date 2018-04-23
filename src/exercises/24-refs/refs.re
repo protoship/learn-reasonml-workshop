@@ -17,6 +17,8 @@ let () = x := x^ + 1;
 
   Your function should iterate over the list and maintain refs of the minimum
   and maximum values seen so far.
+
+  Hint: [max_int] or [min_int].
  */
 let minAndMax = lst => failwith("For you to implement");
 
