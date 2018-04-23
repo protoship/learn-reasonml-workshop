@@ -1,2 +1,3 @@
-/* let simpler_largest: list(int) => int; */
-/* let simpler_smallest: list(int) => int; */
+let simplerLargest: list(float) => float;
+
+let simplerSmallest: list(float) => float;

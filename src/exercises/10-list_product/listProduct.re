@@ -4,10 +4,10 @@ let rec product = xs =>
   | [] => failwith("For you to implement")
   | _for_you_to_implement => failwith("For you to implement")
   };
-/* let%test "Testing product..." = Int.equal(1, product([]));
 
-   let%test "Testing product..." = Int.equal(55, product([55]));
-
-   let%test "Testing product..." = Int.equal(25, product([5, (-5), 1, (-1)]));
-
-   let%test "Testing product..." = Int.equal(25, product([5, 5, 1, 1])); */
+Test.runAll([
+  (product([]) == 1, "product"),
+  (product([55]) == 55, "product"),
+  (product([5, (-5), 1, (-1)]) == 25, "product"),
+  (product([5, 5, 1, 1]) == 25, "product"),
+]);

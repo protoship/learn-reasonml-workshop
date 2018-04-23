@@ -1,18 +1,17 @@
 /* This function finds the largest element in a list: */
 let rec largest = xs =>
   switch (xs) {
-  | [] => min_int
-  | [x, ...ys] => max(x, largest(ys))
+  | [] => neg_infinity
+  | [x, ...rest] => max(x, largest(rest))
   };
 
 /* Let's write a function to find the smallest element: Hint: the opposite of
-   [Float.neg_infinity] is [Float.infinity]. */
+   [min_int] is [max_int]. */
 let rec smallest = xs => failwith("For you to implement");
-/* let%test "Testing smallest..." = Float.equal(Float.infinity, smallest([]));
 
-   let%test "Testing smallest..." = Float.equal(55., smallest([55.]));
-
-   let%test "Testing smallest..." =
-     Float.equal(-5., smallest([5., (-5.), 1., (-1.)]));
-
-   let%test "Testing smallest..." = Float.equal(1., smallest([5., 5., 1., 1.])); */
+Test.runAll([
+  (smallest([]) == infinity, "smallest"),
+  (smallest([55.]) == 55., "smallest"),
+  (smallest([5., (-5.), 1., (-1.)]) == (-5.), "smallest"),
+  (smallest([5., 5., 1., 1.]) == 1., "smallest"),
+]);

@@ -1,3 +1,3 @@
-let simpler_sum: list(int) => int;
+let simplerSum: list(int) => int;
 
-let simpler_product: list(int) => int;
+let simplerProduct: list(int) => int;

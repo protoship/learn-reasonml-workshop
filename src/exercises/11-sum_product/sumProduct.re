@@ -3,10 +3,10 @@ let plus = (x, y) => x + y;
 let times = (x, y) => x * y;
 
 /* Sometimes, multiple functions look similar: */
-let rec add_every_number_up_to = x =>
+let rec addEveryNumberUpTo = x =>
   switch (x) {
   | 0 => 0
-  | _ => plus(x, add_every_number_up_to(x - 1))
+  | _ => plus(x, addEveryNumberUpTo(x - 1))
   };
 
 let rec factorial = x =>
@@ -16,78 +16,75 @@ let rec factorial = x =>
   };
 
 /*
-    These functions have a lot in common:
+  These functions have a lot in common:
 
-    let rec NAME x =
-      match x with
-      | 0 -> ANSWER
-      | _ -> COMBINE x (NAME (x-1))
+  let rec NAME x =
+    switch (x) {
+    | 0 => ANSWER
+    | _ => COMBINE(x, NAME(x-1))
+    }
+
+  Reason lets us write the common parts just once.
+  We just add an extra input for every part that changes (other than the name):
  */
-/*
-    OCaml lets us write the common parts just once.
-    We just add an extra input for every part that changes (other than the name):
- */
-let rec up_to = (answer, combine, x) =>
+let rec upTo = (answer, combine, x) =>
   switch (x) {
   | 0 => answer
-  | _ => combine(x, up_to(answer, combine, x - 1))
+  | _ => combine(x, upTo(answer, combine, x - 1))
   };
 
 /* Now we can write our original functions in one line each! */
-let simpler_add_every_number_up_to = x => up_to(0, plus, x);
+let simplerAddEveryNumberUpTo = x => upTo(0, plus, x);
 
-let simpler_factorial = x => up_to(1, times, x);
+let simplerFactorial = x => upTo(1, times, x);
 
-/* Note that with infix operators like + and *, you can actually pass them as functions!
-      You can do this by writing ( + ) and ( * ). So another way to write the above two
-      functions would be:
+/*
+  Note that with infix operators like + and *, you can actually pass them as
+  functions! You can do this by writing ( + ) and ( * ). So another way to
+  write the above two functions would be:
 
-        let simpler_add_every_number_up_to x = up_to 0 ( + ) x
-        let simpler_factorial x = up_to 1 ( * ) x
-   */
-/* Remember sum and product? */
+  let simplerAddEveryNumberUpTo = x => upTo(0, ( + ), x);
+  let simplerFactorial = x => upTo(1, ( * ), x);
+
+  Remember sum and product?
+ */
 let rec sum = xs =>
   switch (xs) {
   | [] => 0
-  | [x, ...ys] => plus(x, sum(ys))
+  | [x, ...rest] => plus(x, sum(rest))
   };
 
 let rec product = xs =>
   switch (xs) {
   | [] => 1
-  | [x, ...ys] => times(x, product(ys))
+  | [x, ...rest] => times(x, product(rest))
   };
 
 /*
-    These functions look pretty similar too:
+ These functions look pretty similar too:
 
-    let rec NAME xs =
-      match xs with
-      | [] -> ANSWER
-      | x :: ys -> COMBINE x (NAME ys)
+ let rec NAME xs =
+  switch (xs) {
+  | [] => ANSWER
+  | [x, ...rest] => COMBINE(x, NAME(rest))
+  }
+
+ Let's write the common parts just once:
  */
-/* Let's write the common parts just once: */
 let rec every = (answer, combine, xs) => failwith("For you to implement");
 
 /* Now let's rewrite sum and product in just one line each using every */
-let simpler_sum = xs => failwith("For you to implement");
+let simplerSum = xs => failwith("For you to implement");
 
-let simpler_product = xs => failwith("For you to implement");
-/* let%test "Testing simpler_product..." = Int.(==)(1, simpler_product([]));
+let simplerProduct = xs => failwith("For you to implement");
 
-   let%test "Testing simpler_product..." = Int.(==)(55, simpler_product([55]));
-
-   let%test "Testing simpler_product..." =
-     Int.(==)(25, simpler_product([5, (-5), 1, (-1)]));
-
-   let%test "Testing simpler_product..." =
-     Int.(==)(25, simpler_product([5, 5, 1, 1]));
-
-   let%test "Testing simpler_sum..." = Int.(==)(0, simpler_sum([]));
-
-   let%test "Testing simpler_sum..." = Int.(==)(55, simpler_sum([55]));
-
-   let%test "Testing simpler_sum..." =
-     Int.(==)(0, simpler_sum([5, (-5), 1, (-1)]));
-
-   let%test "Testing simpler_sum..." = Int.(==)(12, simpler_sum([5, 5, 1, 1])); */
+Test.runAll([
+  (simplerProduct([]) == 1, "simpler product"),
+  (simplerProduct([55]) == 55, "simpler product"),
+  (simplerProduct([5, (-5), 1, (-1)]) == 25, "simpler product"),
+  (simplerProduct([5, 5, 1, 1]) == 25, "simpler product"),
+  (simplerSum([]) == 0, "simpler sum"),
+  (simplerSum([55]) == 55, "simpler sum"),
+  (simplerSum([5, (-5), 1, (-1)]) == 0, "simpler sum"),
+  (simplerSum([5, 5, 1, 1]) == 12, "simpler sum"),
+]);

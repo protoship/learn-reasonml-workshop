@@ -5,8 +5,10 @@ let rec every = (answer, combine, xs) =>
   | [x, ...xs] => combine(x, every(answer, combine, xs))
   };
 
-/* Here are two functions which compute the largest and smallest integers in a list of
-   integers: */
+/*
+  Here are two functions which compute the largest and smallest integers in a
+  list of integers:
+ */
 let rec largest = xs =>
   switch (xs) {
   | [] => neg_infinity
@@ -18,29 +20,19 @@ let rec smallest = xs =>
   | [] => infinity
   | [x, ...ys] => min(x, smallest(ys))
   };
+
 /* Let's rewrite them using every: */
-/* let simpler_largest = xs => every(failwith("For you to implement"), xs); */
-/* let simpler_smallest = xs => every(failwith("For you to implement"), xs); */
-/* let%test "Testing simpler_smallest..." =
-     Float.(==)(Float.infinity, simpler_smallest([]));
+let simplerLargest = xs => failwith("For you to implement");
 
-   let%test "Testing simpler_smallest..." =
-     Float.(==)(55., simpler_smallest([55.]));
+let simplerSmallest = xs => failwith("For you to implement");
 
-   let%test "Testing simpler_smallest..." =
-     Float.(==)(-5., simpler_smallest([5., (-5.), 1., (-1.)]));
-
-   let%test "Testing simpler_smallest..." =
-     Float.(==)(1., simpler_smallest([5., 5., 1., 1.]));
-
-   let%test "Testing simpler_largest..." =
-     Float.(==)(Float.neg_infinity, simpler_largest([]));
-
-   let%test "Testing simpler_largest..." =
-     Float.(==)(55., simpler_largest([55.]));
-
-   let%test "Testing simpler_largest..." =
-     Float.(==)(5., simpler_largest([5., (-5.), 1., (-1.)]));
-
-   let%test "Testing simpler_largest..." =
-     Float.(==)(5., simpler_largest([5., 5., 1., 1.])); */
+Test.runAll([
+  (simplerSmallest([]) == infinity, "simpler smallest"),
+  (simplerSmallest([55.]) == 55., "simpler smallest"),
+  (simplerSmallest([5., (-5.), 1., (-1.)]) == (-5.), "simpler smallest"),
+  (simplerSmallest([5., 5., 1., 1.]) == 1., "simpler smallest"),
+  (simplerLargest([]) == neg_infinity, "simpler largest"),
+  (simplerLargest([55.]) == 55., "simpler largest"),
+  (simplerLargest([5., (-5.), 1., (-1.)]) == 5., "simpler largest"),
+  (simplerLargest([5., 5., 1., 1.]) == 5., "simpler largest"),
+]);
