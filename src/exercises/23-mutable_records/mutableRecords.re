@@ -46,17 +46,14 @@ module ForTesting = {
   let test_ex_green': stoplight = {...test_ex_red, color: Yellow};
 };
 
+advanceColor(ForTesting.test_ex_red);
+
+advanceColor(ForTesting.test_ex_yellow);
+
+advanceColor(ForTesting.test_ex_green);
+
 Test.runAll([
-  (
-    advanceColor(ForTesting.test_ex_red) == ForTesting.test_ex_red',
-    "advance color",
-  ),
-  (
-    advanceColor(ForTesting.test_ex_yellow) == ForTesting.test_ex_yellow',
-    "advance color",
-  ),
-  (
-    advanceColor(ForTesting.test_ex_green) == ForTesting.test_ex_green',
-    "advance color",
-  ),
+  (ForTesting.test_ex_red == ForTesting.test_ex_red', "advance color"),
+  (ForTesting.test_ex_yellow == ForTesting.test_ex_yellow', "advance color"),
+  (ForTesting.test_ex_green == ForTesting.test_ex_green', "advance color"),
 ]);
