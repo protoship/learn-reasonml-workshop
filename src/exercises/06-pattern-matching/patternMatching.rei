@@ -1,1 +1,1 @@
-let non_zero: int => bool;
+let nonZero: int => bool;

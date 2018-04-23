@@ -13,21 +13,21 @@
   point. For example, + allows you to add two ints and +. allows you to add two
   floats.
 
- Signatures
- ==========
+  Signatures
+  ==========
 
- four is a value with the type int. We write the signature like this:
+  four is a value with the type int. We write the signature like this:
 
- let four : int
+  let four : int
 
- Read it like this: "[four] is a value of type int".
+  Read it like this: "[four] is a value of type int".
 
- Signatures are similar to type declarations in other languages. They tell the
- compiler (and human readers of your code!) the types of variables and
- functions in your program. For example, in C, C++, and Java, the signature
- above would be written like so:
+  Signatures are similar to type declarations in other languages. They tell the
+  compiler (and human readers of your code!) the types of variables and
+  functions in your program. For example, in C, C++, and Java, the signature
+  above would be written like so:
 
- int four;
+  int four;
  */
 let four = 4;
 
@@ -138,9 +138,9 @@ let () = {
   is applying that function to two inputs, [5] and [int_average 5 5].
  */
 Test.runAll([
-  (intAverage(5, 5) == 5, "intAverage"),
-  (floatAverage(5., 5.) == 5., "floatAverage"),
-  (floatAverage(5., 10.) == 7.5, "floatAverage"),
+  (intAverage(5, 5) == 5, "int average"),
+  (floatAverage(5., 5.) == 5., "float average"),
+  (floatAverage(5., 10.) == 7.5, "float average"),
 ]);
 /*
   .rei files

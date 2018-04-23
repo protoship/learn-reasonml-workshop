@@ -3,7 +3,7 @@
   implementation file (basicTypes.re) exposes to other code.
 
   The compiler will enforce that the implementations you write for
-  [int_average] and [float_average] in basicTypes.ml have the type signatures
+  [intAverage] and [floatAverage] in basicTypes.re have the type signatures
   written below.
 
  */

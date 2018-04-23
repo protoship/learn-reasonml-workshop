@@ -23,7 +23,7 @@
 
     $ rtop
 
-  With `Ctrl-d` you can exit an rtop session.
+  Use `Ctrl-d` to exit an rtop session.
 
   For convenience you can build whenever you change the code by running the
   compiler in watch mode. For that, run
