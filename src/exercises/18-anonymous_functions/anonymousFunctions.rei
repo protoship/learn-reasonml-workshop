@@ -1,1 +1,1 @@
-let apply_if_nonzero: (int => int, int) => int;
+let applyIfNonzero: (int => int, int) => int;

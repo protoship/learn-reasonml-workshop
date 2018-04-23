@@ -1,3 +1,3 @@
-let my_new_ints: list(int) => list(int);
+let myNewInts: list(int) => list(int);
 
-let num_even_ints: list(int) => int;
+let numEvenInts: list(int) => int;
