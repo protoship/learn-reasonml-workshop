@@ -30,6 +30,6 @@
 
     $ npm run start
 
-  Try it out and see how it automatically builds code for you.
+  Try it out and move on to the next exercise!
  */
-let () = print_endline("Hello, World!");
+let () = print_endline("Hello, World!);
