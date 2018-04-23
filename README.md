@@ -2,7 +2,7 @@
 
 These exercises are originally from a [workshop organized by Jane Street](https://blog.janestreet.com/learn-ocaml-nyc/) for teaching `OCaml` to programmers who work in other languages and who do not necessarily have experience with functional languages. [Link to original](https://github.com/janestreet/learn-ocaml-workshop).
 
-We updated the exercises to make sense to somebody interested in learning Reason.
+We updated the exercises to be useful for someone interested in learning Reason.
 
 # Setting Up
 
