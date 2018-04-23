@@ -28,8 +28,6 @@ let runAll = xs => {
     tests |> List.map(test) |> List.filter(y => ! y) |> List.length;
   let descriptions = List.map(toString, tests);
   Js.log("");
-  Js.log("==============Begin Test==============");
-  Js.log("");
   List.iteri(
     (i, x) => Js.log(string_of_int(i + 1) ++ ". " ++ x),
     descriptions,
@@ -47,7 +45,5 @@ let runAll = xs => {
       ),
     );
   };
-  Js.log("");
-  Js.log("===============End Test===============");
   Js.log("");
 };

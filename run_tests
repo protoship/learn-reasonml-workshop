@@ -1,0 +1,7 @@
+#! env ruby
+
+files = Dir.glob("src/**/*.re").map {|re_file| re_file.sub(".re", ".bs.js")}
+files.each {|f| 
+  puts "\n\n\n#{'*'*15}  #{f}"
+  break unless system("node #{f}")
+}
