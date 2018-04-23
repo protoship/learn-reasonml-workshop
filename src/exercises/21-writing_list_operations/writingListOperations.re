@@ -67,7 +67,7 @@ module MyList: {
 
 /*
   Here are some other list functions that you may find useful in future
-  exercies.
+  exercises.
 
   You can see the full signature of the List module here:
 
