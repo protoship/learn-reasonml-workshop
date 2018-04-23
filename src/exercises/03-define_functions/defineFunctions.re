@@ -25,7 +25,7 @@ Test.runAll([
   (plus(1, 1) == 2, "plus"),
   (plus(50, -1) == 49, "plus"),
   (times(8, 8) == 64, "times"),
-  (times(2, -1024) == 2048, "times"),
+  (times(2, -1024) == (-2048), "times"),
   (minus(-2, 2) == (-4), "minus"),
   (minus(1337, 337) == 1000, "minus"),
   (divide(1024, 2) == 512, "divide"),
