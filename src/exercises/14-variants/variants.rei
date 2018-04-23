@@ -1,3 +1,3 @@
-type card_value;
+type cardValue;
 
-let card_value_to_score: card_value => int;
+let cardValueToScore: cardValue => int;
