@@ -93,7 +93,7 @@ let () = assert (List.tl([1, 2, 3]) == [2, 3]);
 
   let rev: list('a) => list('a);
  */
-let () = assert (List.tl([1, 2, 3]) == [3, 2, 1]);
+let () = assert (List.rev([1, 2, 3]) == [3, 2, 1]);
 
 /*
   List.mem returns a bool indicating if the given element is contained in the
