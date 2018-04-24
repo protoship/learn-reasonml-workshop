@@ -1,11 +1,10 @@
 /*
   Another non-basic type in Reason is a tuple. A tuple is an ordered collection
-  of values that can each be of a different type. The signature for a tuple is
-  written by separating all the types within the tuple by a *.
+  of values that can each be of a different type.
  */
 type intStringAndChar = (int, string, char);
 
-/* Tuples are created by joining values with a comma: */
+/* Tuples are created by supplying values in place of their basic types: */
 let example: intStringAndChar = (5, "hello", 'A');
 
 /* You can also extract the components of a tuple: */
