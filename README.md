@@ -26,3 +26,5 @@ After completing each exercise, run its test. For example for the second exercis
 
 This `.bs.js` file is your Reason program `.re` compiled to Javascript. `.bs` stands for the [bucklescript compiler](https://bucklescript.github.io/). You should read the `.bs.js` file for each exercise and compare the Javascript output to the original Reason code. This will help you develop an intuition for the language very quickly.
 
+You can also run `./run_tests` which will run all the tests automatically for you and stop at the first failing one.
+
