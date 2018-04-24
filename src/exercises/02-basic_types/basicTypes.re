@@ -70,7 +70,7 @@ let floatFour = 4.;
 /* let intAverage = (x, y) => failwith("For you to implement"); */
 let intAverage = (x, y) => failwith("For you to implement");
 
-/* let floatAverage : float -> float -> float */
+/* let floatAverage : (float, float) => float */
 /* let floatAverage = (x, y) => failwith("For you to implement"); */
 let floatAverage = (x, y) => failwith("For you to implement");
 
