@@ -1,7 +1,7 @@
 /*
   Pattern matching lets us compare inputs to known values.
   Patterns following "|" are tested in order.
-  On the first match, we use the result following "->".
+  On the first match, we use the result following "=>".
   The "_" pattern means "could be anything".
  */
 let isSuperman = x =>
