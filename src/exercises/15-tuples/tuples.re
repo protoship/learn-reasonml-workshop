@@ -57,11 +57,11 @@ let stringPair: pair(string) = ("foo", "bar");
 let nestedCharPair: pair(pair(char)) = (('a', 'b'), ('c', 'd'));
 
 /* Write functions to extract the first and second elements from a pair. */
-/* let first : 'a pair -> 'a */
+/* let first: pair('a) => 'a */
 /* TODO */
 let first = pair => failwith("For you to implement");
 
-/* let second : 'a pair -> 'a */
+/* let second: pair('a) => 'a */
 /* TODO */
 let second = pair => failwith("For you to implement");
 
