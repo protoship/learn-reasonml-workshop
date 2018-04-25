@@ -11,13 +11,12 @@ let divide = (dividend, divisor) => dividend / divisor;
 /*
   We can fix this using labelled arguments.
 
-  To label an argument in a signature, "NAME:" is put before the type.
-  When defining the function, we put a tilde (~) before the name of the
-  argument.
+  To label an argument in a signature, and when defining a function, we
+  put a tilde (~) before the name of the argument.
 
   The following function has the signature:
 
-  let divide : (~dividend:int, ~divisor:int) => int
+  let divide: (~dividend:int, ~divisor:int) => int
  */
 let divide = (~dividend, ~divisor) => dividend / divisor;
 
@@ -40,7 +39,7 @@ let divide = (~dividend, ~divisor) => dividend / divisor;
   divide(~dividend, ~divisor)
 
   Now implement [modulo(~dividend, ~divisor)] using our version of divide with
- labelled arguments (e.g. [modulo(~dividend:7, ~divisor:2)] should equal 1)
+  labelled arguments (e.g. [modulo(~dividend:7, ~divisor:2)] should equal 1)
  */
 let modulo = (~dividend, ~divisor) => failwith("For you to implement");
 
