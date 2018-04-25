@@ -52,15 +52,17 @@ let floatFour = 4.;
   Function signatures
   ===================
 
-  In Reason, functions are also values!
+  In Reason, functions are also values! And so, functions also have type
+  signatures.
 
-  In a signature, the arrow [->] denotes an argument. The last type in a
-  function signature is the result.
+  In a function signature, types of parameters are enclosed within paranthesis.
+  The return value is the described last and preceded immediately by an arrow
+  [=>].
 
   So the signature for a function that takes two integers and returns an
   integer is:
 
-  let int_average : int -> int -> int
+  let intAverage: (int, int) => int
 
   In Reason there's no explicit return statement: functions just return the
   value of the last statement in that function.
@@ -68,26 +70,30 @@ let floatFour = 4.;
 /* let intAverage = (x, y) => failwith("For you to implement"); */
 let intAverage = (x, y) => failwith("For you to implement");
 
-/* let float_average : float -> float -> float */
+/* let floatAverage : (float, float) => float */
 /* let floatAverage = (x, y) => failwith("For you to implement"); */
 let floatAverage = (x, y) => failwith("For you to implement");
 
 /*
   The following expression computes the average of 10 and 20:
 
-  int_average(10, 20)
+  intAverage(10, 20)
 
   As in many languages strings are denoted with "" and chars are denoted with ''.
 
   String concatenation is done with the ++ operator.
 
-  let first_name : string
+  let firstName : string
  */
 let firstName = "Fred";
 
 /* You can also write type annotations in definitions */
 let lastName: string = "Flintstone";
 
+/*
+  But Reason has very strong type inference, so you can most often omit types,
+  and the compiler can infer that fullName is a string.
+ */
 let fullName = firstName ++ " " ++ lastName;
 
 let aBooleanFalse: bool = false;
