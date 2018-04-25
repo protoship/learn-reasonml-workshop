@@ -27,7 +27,7 @@ assert (whatNumberAmIThinking(None) == "I'm not thinking of any number!");
 assert (whatNumberAmIThinking(Some(7)) == "My number is: 7");
 
 /*
-  Implement the function [safe_divide(~dividend, ~divisor)], which takes two
+  Implement the function [safeDivide(~dividend, ~divisor)], which takes two
   ints and returns an int option. It should return None if [divisor = 0], and
   otherwise returns [Some(x)] where [x] is the division result
  */
