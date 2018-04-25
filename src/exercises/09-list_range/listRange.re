@@ -1,7 +1,7 @@
 /*
   The append infix operator @ concatenates two lists:
 
-  let (@) : 'a list -> 'a list -> 'a list
+  let (@) : (list('a), list('a)) => list('a)
 
   This function is the same as the List.append function.
  */
@@ -11,10 +11,10 @@ let () = {
 };
 
 /*
-  TODO: Write a function to construct a list of all integers in the range [from,to_]
+  Write a function to construct a list of all integers in the range [from,to_]
   in increasing order.
 
-  let range : int -> int -> int list
+  let range: (int, int) => list(int)
  */
 let range = (from, to_) => failwith("For you to implement");
 
