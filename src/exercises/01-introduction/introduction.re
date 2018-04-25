@@ -9,27 +9,29 @@
   teach OCaml. It was ported over to Reason with the help of `refmt` (Reason
   format) binary that helps you convert to/from Reason/OCaml syntax.
 
-  This exercise is to familiarize you with, writing code - compile - run cycle.
+  This exercise is to familiarize you with the code-compile cycle.
 
   To compile your code, run in a terminal session in the root directory
 
     $ npm run build
 
   You should see a compilation error because it's missing the end quote. Add
-  the end quote and re-run. You should see that the code compiled and ran!
-
-  You can also execute code in utop directly. Try pasting this line of code
-  into `rtop` and running it there.
-
-    $ rtop
-
-  Use `Ctrl-d` to exit an rtop session.
+  the end quote and re-run. You should see that the code compiled successfully!
 
   For convenience you can build whenever you change the code by running the
   compiler in watch mode. For that, run
 
     $ npm run start
 
-  Try it out and move on to the next exercise!
+  You can also execute code in Reason's REPL (rtop) directly. To start rtop from
+  your terminal run:
+
+    $ rtop
+
+  Now try pasting the code below into it.
+
+  *Note:* Use `Ctrl-d` to exit the rtop session.
+
+  Try these out and move on to the next exercise!
  */
 let () = print_endline("Hello, World!);
