@@ -66,6 +66,7 @@ let first = pair => failwith("For you to implement");
 let second = pair => failwith("For you to implement");
 
 Test.runAll([
+  (add((1, 2), (3, 4)) == (4, 6), "add"),
   (first(("foo", "bar")) == "foo", "first"),
   (second(('a', 'b')) == 'b', "second"),
 ]);
