@@ -1,9 +1,9 @@
 /*
-  Reason allows you to define record types.
-  These are like structs in C.
-  Or in python/ruby/java - data members of a class.
+  Reason allows you to define record types. These are like structs in C.
+  Or in Python, Ruby & Java, these are similar to data members or static
+  variables of a class.
  */
-/* it contains four fields */
+/* Here is a [person] record type that contains four fields. */
 /* The first field, called "age" is of type int.  */
 type person = {
   /* The name of the type is [person] */
@@ -26,7 +26,7 @@ let anExample: person = {
 
 /*
   In order to get a field out of a record we use the "." operator:
-  VARIABLE.FIELD
+  variable.field
  */
 let age: int = anExample.age;
 
@@ -49,10 +49,9 @@ let print_name = ({firstName, lastName, age: _, numberOfCars: _}) => {
 /*
   Finally, we can perform "functional updates" by replacing the value of a
   field, yielding a brand new record. We use the ... spread operator to do
-  this.The original record isn't mutated.
+  this. The original record isn't mutated.
 
   let addOneToAge : person -> person
-
  */
 let addOneToAge = person => {...person, age: person.age + 1};
 
@@ -60,8 +59,8 @@ let () = assert (23 == addOneToAge(anExample).age);
 
 /*
   Write a function that does different things for different people:
-  When the person's first name is "Jan",
-  you should return a record with the age set to 30.
+  When the person's first name is "Jan", you should return a record with
+  the age set to 30.
 
   Otherwise, you should increase the number of cars by 6.
 
@@ -84,10 +83,6 @@ module ForTesting = {
     numberOfCars: 55,
   };
   let test_ex2': person = {...test_ex2, numberOfCars: 61};
-  /* let%test "Testing modify_person..." =
-       [%compare.equal: person](test_ex1', modify_person(test_ex1));
-     let%test "Testing modify_person..." =
-       [%compare.equal: person](test_ex2', modify_person(test_ex2)); */
 };
 
 Test.runAll([
