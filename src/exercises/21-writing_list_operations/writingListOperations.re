@@ -1,21 +1,8 @@
 /*
-  It is common in all programming languages to want to store and operate on
-  collections of the same data type. Reason natively supports linked lists,
-  which have type list('a).
-
-  When you first learn to program in languages like C and Java, you use "for"
-  loops to operate on all the elements of a collection. For example, if we
-  wanted to compute the sum of a list of integers in Python, we could write:
-
-  numbers = [1,2,3] acc = 0 for x in numbers: acc = acc + x
-
-  result = acc assert (6 == result)
-
-  We chose the variable name "acc" to be short for accumulator.
-
-  In Reason, instead of for loops we use "higher order functions"; in other
-  words, functions which take other functions as input. Let's take a look at
-  the [List.fold_left] function, which has signature:
+  As we've seen, in Reason, instead of for loops we use "higher order functions"
+  to itereate over collections like lists. Higher order functions, in other
+  words, are functions that take other functions as input. Let's take a deeper
+  look at the [List.fold_left] function, which has the signature:
 
   let fold_left: (('a, 'b) => 'a, 'a, list('b)) => 'a
 
@@ -30,14 +17,14 @@
   accumulator at each step and returning the final value of the accumulator
   when it's done.
 
-  Let's rewrite the Python code above in Reason. In this case, types 'a and 'b
-  are both equal to int.
+  Let's revisit the sumOfMyInts example we've seen before. In this case, types
+  'a and 'b are both equal to int.
  */
-let numbers = [1, 2, 3];
+let ints = [1, 2, 3];
 
-let result = List.fold_left((acc, x) => acc + x, 0, numbers);
+let sumOfMyInts = List.fold_left((total, myInt) => total + myInt, 0, ints);
 
-let () = assert (6 == result);
+let () = assert (6 == sumOfMyInts);
 
 /* Now let's use List.fold_left to write some other useful List functions. */
 module MyList: {
@@ -71,7 +58,7 @@ module MyList: {
 
   You can see the full signature of the List module here:
 
-  https://caml.inria.fr/pub/docs/manual-ocaml/libref/List.html
+  https://reasonml.github.io/api/List.html
 
   List.hd returns the first element of the list. It raises an exception if
   called on an empty list. The signature is:
