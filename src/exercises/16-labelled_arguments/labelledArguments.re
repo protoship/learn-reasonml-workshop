@@ -29,7 +29,7 @@ let divide = (~dividend, ~divisor) => dividend / divisor;
 
   let dividend = 9;
   let divisor  = 3;
-  divide(~dividend:dividend, ~divisor:divisor)
+  divide(~dividend=dividend, ~divisor=divisor)
 
   If the variable name happens to be the same as the labelled argument, we
   don't even have to write it twice:
@@ -37,6 +37,8 @@ let divide = (~dividend, ~divisor) => dividend / divisor;
   let dividend = 9;
   let divisor  = 3;
   divide(~dividend, ~divisor)
+
+  This short-hand syntax is called punning.
 
   Now implement [modulo(~dividend, ~divisor)] using our version of divide with
   labelled arguments (e.g. [modulo(~dividend:7, ~divisor:2)] should equal 1)
