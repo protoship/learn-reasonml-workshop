@@ -22,7 +22,7 @@
 
   What map(f, la) does is take your function [f], apply it to each element of
   [la], and returns a new list [lb] here the the [i]th element of [lb] is
-  equal to the function [f] applied to the [i] thelement of [la].
+  equal to the function [f] applied to the [i]th element of [la].
 
   Let's see some examples:
  */
@@ -58,7 +58,7 @@ let () = List.iter(i => Js.log("here's an int: " ++ i), myStrings(myInts));
 
   let fold_left: (('b, 'a) => 'b, 'b, list('a)) => 'b
 
-  Let's say your list [l] contains [a1; a2; a3]. Then if you call
+  Let's say your list [l] contains [a1, a2, a3]. Then if you call
   fold_left(f, i, l), then it will end up computing:
 
     (f (f (f i a1) a2) a3)
