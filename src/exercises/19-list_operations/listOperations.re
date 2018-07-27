@@ -15,7 +15,7 @@
 
     let map : (('a => 'b), list('a)) => list('b)
 
-  Let's read this signature together. It takes two function arguments:
+  Let's read this signature together. It takes two arguments:
     1) a function from some type ['a] to some other type ['b]
     2) a list of ['a]s
   and then it returns a list of ['b]s.
