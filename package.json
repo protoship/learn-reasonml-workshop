@@ -4,7 +4,6 @@
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
-    "clean": "bsb -clean-world",
     "test": "jest --env=node",
     "test:watch": "jest --env=node --watchAll"
   },
