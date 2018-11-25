@@ -11,9 +11,9 @@ let example: intStringAndChar = (5, "hello", 'A');
 let (i, s, c) = example;
 
 let () = {
-  assert (i == 5);
-  assert (s == "hello");
-  assert (c == 'A');
+  assert(i == 5);
+  assert(s == "hello");
+  assert(c == 'A');
 };
 
 /*
@@ -65,8 +65,18 @@ let first = pair => failwith("For you to implement");
 /* TODO */
 let second = pair => failwith("For you to implement");
 
-Test.runAll([
-  (add((1, 2), (3, 4)) == (4, 6), "add"),
-  (first(("foo", "bar")) == "foo", "first"),
-  (second(('a', 'b')) == 'b', "second"),
-]);
+Jest.(
+  Expect.(
+    describe("Tuples", () => {
+      test("add", () =>
+        expect(add((1, 2), (3, 4))) |> toBe((4, 6))
+      );
+      test("first", () =>
+        expect(first(("foo", "bar"))) |> toBe("foo")
+      );
+      test("second", () =>
+        expect(second(('a', 'b'))) |> toBe('b')
+      );
+    })
+  )
+);

@@ -21,13 +21,33 @@ let minus = (x, y) => failwith("For you to implement");
 
 let divide = (x, y) => failwith("For you to implement");
 
-Test.runAll([
-  (plus(1, 1) == 2, "plus"),
-  (plus(50, -1) == 49, "plus"),
-  (times(8, 8) == 64, "times"),
-  (times(2, -1024) == (-2048), "times"),
-  (minus(-2, 2) == (-4), "minus"),
-  (minus(1337, 337) == 1000, "minus"),
-  (divide(1024, 2) == 512, "divide"),
-  (divide(31337, 31) == 1010, "divide"),
-]);
+Jest.(
+  Expect.(
+    describe("Define functions", () => {
+      test("plus", () =>
+        expect(plus(1, 1)) |> toBe(2)
+      );
+      test("plus", () =>
+        expect(plus(50, -1)) |> toBe(49)
+      );
+      test("times", () =>
+        expect(times(8, 8)) |> toBe(64)
+      );
+      test("times", () =>
+        expect(times(2, -1024)) |> toBe(-2048)
+      );
+      test("minus", () =>
+        expect(minus(-2, 2)) |> toBe(-4)
+      );
+      test("minus", () =>
+        expect(minus(1337, 337)) |> toBe(1000)
+      );
+      test("divide", () =>
+        expect(divide(1024, 2)) |> toBe(512)
+      );
+      test("divide", () =>
+        expect(divide(31337, 31)) |> toBe(1010)
+      );
+    })
+  )
+);

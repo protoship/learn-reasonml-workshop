@@ -7,7 +7,7 @@
  */
 let rec addEveryNumberUpTo = x => {
   /* make sure we don't call this on negative numbers! */
-  assert (x >= 0);
+  assert(x >= 0);
   switch (x) {
   | 0 => 0
   | _ => x + addEveryNumberUpTo(x - 1)
@@ -19,12 +19,22 @@ let rec addEveryNumberUpTo = x => {
   Remember: [factorial 0] is 1
  */
 let rec factorial = x => {
-  assert (x >= 0);
+  assert(x >= 0);
   failwith("For you to implement");
 };
 
-Test.runAll([
-  (factorial(0) == 1, "factorial"),
-  (factorial(5) == 120, "factorial"),
-  (factorial(12) == 479001600, "factorial"),
-]);
+Jest.(
+  Expect.(
+    describe("Simple recursion", () => {
+      test("factorial", () =>
+        expect(factorial(0)) |> toBe(1)
+      );
+      test("factorial", () =>
+        expect(factorial(5)) |> toBe(120)
+      );
+      test("factorial", () =>
+        expect(factorial(12)) |> toBe(479001600)
+      );
+    })
+  )
+);

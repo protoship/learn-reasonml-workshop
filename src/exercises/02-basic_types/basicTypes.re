@@ -104,7 +104,7 @@ let aBooleanFalse: bool = false;
   || for logical or
   !  for logical not
  */
-let () = assert (true || aBooleanFalse);
+let () = assert(true || aBooleanFalse);
 
 /*
   The [unit] type
@@ -143,11 +143,22 @@ let () = {
   In words: [equal] takes two [int]s and returns a [bool]. The following line
   is applying that function to two inputs, [5] and [int_average 5 5].
  */
-Test.runAll([
-  (intAverage(5, 5) == 5, "int average"),
-  (floatAverage(5., 5.) == 5., "float average"),
-  (floatAverage(5., 10.) == 7.5, "float average"),
-]);
+
+Jest.(
+  Expect.(
+    describe("Basic types", () => {
+      test("int average", () =>
+        expect(intAverage(5, 5)) |> toBe(5)
+      );
+      test("float average", () =>
+        expect(floatAverage(5., 5.)) |> toBe(5.)
+      );
+      test("float average", () =>
+        expect(floatAverage(5., 10.)) |> toBe(7.5)
+      );
+    })
+  )
+);
 /*
   .rei files
   ==========

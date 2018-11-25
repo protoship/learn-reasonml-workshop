@@ -22,7 +22,15 @@ let () = x := x^ + 1;
  */
 let minAndMax = lst => failwith("For you to implement");
 
-Test.runAll([
-  (minAndMax([5, 9, 2, 4, 3]) == (2, 9), "min and max"),
-  (minAndMax([11, 15, 7, 34]) == (7, 34), "min and max"),
-]);
+Jest.(
+  Expect.(
+    describe("Refs", () => {
+      test("min and max", () =>
+        expect(minAndMax([5, 9, 2, 4, 3])) |> toBe((2, 9))
+      );
+      test("min and max", () =>
+        expect(minAndMax([11, 15, 7, 34])) |> toBe((7, 34))
+      );
+    })
+  )
+);

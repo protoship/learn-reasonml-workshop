@@ -46,14 +46,21 @@ module ForTesting = {
   let test_ex_green': stoplight = {...test_ex_red, color: Yellow};
 };
 
-advanceColor(ForTesting.test_ex_red);
-
-advanceColor(ForTesting.test_ex_yellow);
-
-advanceColor(ForTesting.test_ex_green);
-
-Test.runAll([
-  (ForTesting.test_ex_red == ForTesting.test_ex_red', "advance color"),
-  (ForTesting.test_ex_yellow == ForTesting.test_ex_yellow', "advance color"),
-  (ForTesting.test_ex_green == ForTesting.test_ex_green', "advance color"),
-]);
+Jest.(
+  Expect.(
+    describe("Mutable records", () => {
+      test("advance color", () => {
+        advanceColor(ForTesting.test_ex_red);
+        expect(ForTesting.test_ex_red) |> toBe(ForTesting.test_ex_red');
+      });
+      test("advance color", () => {
+        advanceColor(ForTesting.test_ex_yellow);
+        expect(ForTesting.test_ex_yellow) |> toBe(ForTesting.test_ex_yellow');
+      });
+      test("advance color", () => {
+        advanceColor(ForTesting.test_ex_green);
+        expect(ForTesting.test_ex_green) |> toBe(ForTesting.test_ex_green');
+      });
+    })
+  )
+);

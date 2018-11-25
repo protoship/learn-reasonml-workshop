@@ -5,9 +5,21 @@ let rec product = xs =>
   | _for_you_to_implement => failwith("For you to implement")
   };
 
-Test.runAll([
-  (product([]) == 1, "product"),
-  (product([55]) == 55, "product"),
-  (product([5, (-5), 1, (-1)]) == 25, "product"),
-  (product([5, 5, 1, 1]) == 25, "product"),
-]);
+Jest.(
+  Expect.(
+    describe("List product", () => {
+      test("product", () =>
+        expect(product([])) |> toBe(1)
+      );
+      test("product", () =>
+        expect(product([55])) |> toBe(55)
+      );
+      test("product", () =>
+        expect(product([5, (-5), 1, (-1)])) |> toBe(25)
+      );
+      test("product", () =>
+        expect(product([5, 5, 1, 1])) |> toBe(25)
+      );
+    })
+  )
+);

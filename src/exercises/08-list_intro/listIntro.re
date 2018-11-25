@@ -37,9 +37,21 @@ let listAppend = (first, second) => first @ second;
  */
 let newHead = (hd, rest) => [hd, ...rest];
 
-Test.runAll([
-  (sum([]) == 0, "sum"),
-  (sum([55]) == 55, "sum"),
-  (sum([5, (-5), 1, (-1)]) == 0, "sum"),
-  (sum([5, 5, 1, 1]) == 12, "sum"),
-]);
+Jest.(
+  Expect.(
+    describe("List intro", () => {
+      test("sum", () =>
+        expect(sum([])) |> toBe(0)
+      );
+      test("sum", () =>
+        expect(sum([55])) |> toBe(55)
+      );
+      test("sum", () =>
+        expect(sum([5, (-5), 1, (-1)])) |> toBe(0)
+      );
+      test("sum", () =>
+        expect(sum([5, 5, 1, 1])) |> toBe(12)
+      );
+    })
+  )
+);

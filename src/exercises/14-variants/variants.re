@@ -50,10 +50,24 @@ let cardValueToString = cardValue =>
  */
 let cardValueToScore = cardValue => failwith("For you to implement");
 
-Test.runAll([
-  (cardValueToScore(Ace) == 11, "card value to score"),
-  (cardValueToScore(King) == 10, "card value to score"),
-  (cardValueToScore(Queen) == 10, "card value to score"),
-  (cardValueToScore(Jack) == 10, "card value to score"),
-  (cardValueToScore(Number(5)) == 5, "card value to score"),
-]);
+Jest.(
+  Expect.(
+    describe("Variants", () => {
+      test("card value to score", () =>
+        expect(cardValueToScore(Ace)) |> toBe(11)
+      );
+      test("card value to score", () =>
+        expect(cardValueToScore(King)) |> toBe(10)
+      );
+      test("card value to score", () =>
+        expect(cardValueToScore(Queen)) |> toBe(10)
+      );
+      test("card value to score", () =>
+        expect(cardValueToScore(Jack)) |> toBe(10)
+      );
+      test("card value to score", () =>
+        expect(cardValueToScore(Number(5))) |> toBe(5)
+      );
+    })
+  )
+);

@@ -20,7 +20,15 @@ let () = {
 /* Try to write [average] by reusing [add] and [half] */
 let average = (x, y) => failwith("For you to implement");
 
-Test.runAll([
-  (average(5, 5) == 5, "average"),
-  (average(50, 100) == 75, "average"),
-]);
+Jest.(
+  Expect.(
+    describe("Call functions", () => {
+      test("average", () =>
+        expect(average(5, 5)) |> toBe(5)
+      );
+      test("average", () =>
+        expect(average(50, 100)) |> toBe(75)
+      );
+    })
+  )
+);

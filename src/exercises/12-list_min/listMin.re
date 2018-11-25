@@ -9,9 +9,21 @@ let rec largest = xs =>
    [neg_infinity] is [infinity]. */
 let rec smallest = xs => failwith("For you to implement");
 
-Test.runAll([
-  (smallest([]) == infinity, "smallest"),
-  (smallest([55.]) == 55., "smallest"),
-  (smallest([5., (-5.), 1., (-1.)]) == (-5.), "smallest"),
-  (smallest([5., 5., 1., 1.]) == 1., "smallest"),
-]);
+Jest.(
+  Expect.(
+    describe("List min", () => {
+      test("smallest", () =>
+        expect(smallest([])) |> toBe(infinity)
+      );
+      test("smallest", () =>
+        expect(smallest([55.])) |> toBe(55.)
+      );
+      test("smallest", () =>
+        expect(smallest([5., (-5.), 1., (-1.)])) |> toBe(-5.)
+      );
+      test("smallest", () =>
+        expect(smallest([5., 5., 1., 1.])) |> toBe(1.)
+      );
+    })
+  )
+);

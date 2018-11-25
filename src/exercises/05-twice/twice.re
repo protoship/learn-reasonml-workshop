@@ -23,16 +23,34 @@ let square = x => failwith("For you to implement");
 let twice = (f, x) => failwith("For you to implement");
 
 /* Now that we have twice, write add2 and raiseToTheFourth */
-let add2 = failwith("For you to implement"); /* Hint: use add1 */
+let add2 = x => failwith("For you to implement"); /* Hint: use add1 */
 
-let raiseToTheFourth = failwith("For you to implement"); /* Hint: use square */
+let raiseToTheFourth = x => failwith("For you to implement"); /* Hint: use square */
 
-Test.runAll([
-  (add1(4) == 5, "add1"),
-  (square(4) == 16, "square"),
-  (square(-4) == 16, "square"),
-  (twice(add1, 3) == 5, "twice"),
-  (add2(1335) == 1337, "add2"),
-  (raiseToTheFourth(1) == 1, "raiseToTheFourth"),
-  (raiseToTheFourth(10) == 10000, "raiseToTheFourth"),
-]);
+Jest.(
+  Expect.(
+    describe("Twice", () => {
+      test("add1", () =>
+        expect(add1(4)) |> toBe(5)
+      );
+      test("square", () =>
+        expect(square(4)) |> toBe(16)
+      );
+      test("square", () =>
+        expect(square(-4)) |> toBe(16)
+      );
+      test("twice", () =>
+        expect(twice(add1, 3)) |> toBe(5)
+      );
+      test("add2", () =>
+        expect(add2(1335)) |> toBe(1337)
+      );
+      test("raiseToTheFourth", () =>
+        expect(raiseToTheFourth(1)) |> toBe(1)
+      );
+      test("raiseToTheFourth", () =>
+        expect(raiseToTheFourth(10)) |> toBe(10000)
+      );
+    })
+  )
+);

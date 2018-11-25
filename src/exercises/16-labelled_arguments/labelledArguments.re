@@ -45,7 +45,15 @@ let divide = (~dividend, ~divisor) => dividend / divisor;
  */
 let modulo = (~dividend, ~divisor) => failwith("For you to implement");
 
-Test.runAll([
-  (modulo(~dividend=17, ~divisor=5) == 2, "modulo"),
-  (modulo(~dividend=99, ~divisor=9) == 0, "modulo"),
-]);
+Jest.(
+  Expect.(
+    describe("Labeled arguments", () => {
+      test("modulo", () =>
+        expect(modulo(~dividend=17, ~divisor=5)) |> toBe(2)
+      );
+      test("modulo", () =>
+        expect(modulo(~dividend=99, ~divisor=9)) |> toBe(0)
+      );
+    })
+  )
+);

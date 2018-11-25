@@ -22,9 +22,9 @@ let whatNumberAmIThinking = (myNumber: option(int)) =>
   | Some(number) => "My number is: " ++ string_of_int(number)
   };
 
-assert (whatNumberAmIThinking(None) == "I'm not thinking of any number!");
+assert(whatNumberAmIThinking(None) == "I'm not thinking of any number!");
 
-assert (whatNumberAmIThinking(Some(7)) == "My number is: 7");
+assert(whatNumberAmIThinking(Some(7)) == "My number is: 7");
 
 /*
   Implement the function [safeDivide(~dividend, ~divisor)], which takes two
@@ -33,19 +33,16 @@ assert (whatNumberAmIThinking(Some(7)) == "My number is: 7");
  */
 let safeDivide = (~dividend, ~divisor) => failwith("For you to implement");
 
-Test.runAll([
-  (
-    switch (safeDivide(~dividend=3, ~divisor=2)) {
-    | Some(1) => true
-    | _ => false
-    },
-    "safe divide",
-  ),
-  (
-    switch (safeDivide(~dividend=3, ~divisor=0)) {
-    | None => true
-    | _ => false
-    },
-    "safe divide",
-  ),
-]);
+Jest.(
+  Expect.(
+    describe("Safe divide", () => {
+      test("safe divide", () =>
+        expect(safeDivide(~dividend=3, ~divisor=2)) |> toBe(Some(1))
+      );
+
+      test("safe divide", () =>
+        expect(safeDivide(~dividend=3, ~divisor=0)) |> toBe(None)
+      );
+    })
+  )
+);

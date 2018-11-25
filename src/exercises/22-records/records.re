@@ -30,7 +30,7 @@ let anExample: person = {
  */
 let age: int = anExample.age;
 
-let () = assert (age == 22);
+let () = assert(age == 22);
 
 /* We can also match on records to get field information. */
 let print_info = ({firstName, lastName, age, numberOfCars}) => {
@@ -55,7 +55,7 @@ let print_name = ({firstName, lastName, age: _, numberOfCars: _}) => {
  */
 let addOneToAge = person => {...person, age: person.age + 1};
 
-let () = assert (23 == addOneToAge(anExample).age);
+let () = assert(23 == addOneToAge(anExample).age);
 
 /*
   Write a function that does different things for different people:
@@ -85,13 +85,17 @@ module ForTesting = {
   let test_ex2': person = {...test_ex2, numberOfCars: 61};
 };
 
-Test.runAll([
-  (
-    modifyPerson(ForTesting.test_ex1) == ForTesting.test_ex1',
-    "modifyPerson",
-  ),
-  (
-    modifyPerson(ForTesting.test_ex2) == ForTesting.test_ex2',
-    "modifyPerson",
-  ),
-]);
+Jest.(
+  Expect.(
+    describe("Records", () => {
+      test("modifyPerson", () =>
+        expect(modifyPerson(ForTesting.test_ex1))
+        |> toBe(ForTesting.test_ex1')
+      );
+      test("modifyPerson", () =>
+        expect(modifyPerson(ForTesting.test_ex2))
+        |> toBe(ForTesting.test_ex2')
+      );
+    })
+  )
+);

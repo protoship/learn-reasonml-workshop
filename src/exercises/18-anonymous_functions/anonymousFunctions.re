@@ -35,15 +35,15 @@ let mapOption = (f, opt) =>
 
 let double = i => 2 * i;
 
-let () = assert (mapOption(double, None) == None);
+let () = assert(mapOption(double, None) == None);
 
-let () = assert (mapOption(double, Some(2)) == Some(4));
+let () = assert(mapOption(double, Some(2)) == Some(4));
 
 /*
   Instead of defining the function double beforehand, we can use an anonymous
   function.
  */
-let () = assert (mapOption(i => 2 * i, Some(2)) == Some(4));
+let () = assert(mapOption(i => 2 * i, Some(2)) == Some(4));
 
 /*
   Define a function applyIfNonzero which takes a function from (int => int)
@@ -52,7 +52,15 @@ let () = assert (mapOption(i => 2 * i, Some(2)) == Some(4));
  */
 let applyIfNonzero = (f, i) => failwith("For you to implement");
 
-Test.runAll([
-  (applyIfNonzero(x => 10 / x, 0) == 0, "apply if non-zero"),
-  (applyIfNonzero(x => 10 / x, 5) == 2, "apply if non-zero"),
-]);
+Jest.(
+  Expect.(
+    describe("Anonymous functions", () => {
+      test("apply if non-zero", () =>
+        expect(applyIfNonzero(x => 10 / x, 0)) |> toBe(0)
+      );
+      test("apply if non-zero", () =>
+        expect(applyIfNonzero(x => 10 / x, 5)) |> toBe(2)
+      );
+    })
+  )
+);

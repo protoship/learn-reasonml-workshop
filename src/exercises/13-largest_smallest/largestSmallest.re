@@ -26,13 +26,33 @@ let simplerLargest = xs => failwith("For you to implement");
 
 let simplerSmallest = xs => failwith("For you to implement");
 
-Test.runAll([
-  (simplerSmallest([]) == infinity, "simpler smallest"),
-  (simplerSmallest([55.]) == 55., "simpler smallest"),
-  (simplerSmallest([5., (-5.), 1., (-1.)]) == (-5.), "simpler smallest"),
-  (simplerSmallest([5., 5., 1., 1.]) == 1., "simpler smallest"),
-  (simplerLargest([]) == neg_infinity, "simpler largest"),
-  (simplerLargest([55.]) == 55., "simpler largest"),
-  (simplerLargest([5., (-5.), 1., (-1.)]) == 5., "simpler largest"),
-  (simplerLargest([5., 5., 1., 1.]) == 5., "simpler largest"),
-]);
+Jest.(
+  Expect.(
+    describe("Largest & smallest", () => {
+      test("simpler smallest", () =>
+        expect(simplerSmallest([])) |> toBe(infinity)
+      );
+      test("simpler smallest", () =>
+        expect(simplerSmallest([55.])) |> toBe(55.)
+      );
+      test("simpler smallest", () =>
+        expect(simplerSmallest([5., (-5.), 1., (-1.)])) |> toBe(-5.)
+      );
+      test("simpler smallest", () =>
+        expect(simplerSmallest([5., 5., 1., 1.])) |> toBe(1.)
+      );
+      test("simpler largest", () =>
+        expect(simplerLargest([])) |> toBe(neg_infinity)
+      );
+      test("simpler largest", () =>
+        expect(simplerLargest([55.])) |> toBe(55.)
+      );
+      test("simpler largest", () =>
+        expect(simplerLargest([5., (-5.), 1., (-1.)])) |> toBe(5.)
+      );
+      test("simpler largest", () =>
+        expect(simplerLargest([5., 5., 1., 1.])) |> toBe(5.)
+      );
+    })
+  )
+);

@@ -78,13 +78,33 @@ let simplerSum = xs => failwith("For you to implement");
 
 let simplerProduct = xs => failwith("For you to implement");
 
-Test.runAll([
-  (simplerProduct([]) == 1, "simpler product"),
-  (simplerProduct([55]) == 55, "simpler product"),
-  (simplerProduct([5, (-5), 1, (-1)]) == 25, "simpler product"),
-  (simplerProduct([5, 5, 1, 1]) == 25, "simpler product"),
-  (simplerSum([]) == 0, "simpler sum"),
-  (simplerSum([55]) == 55, "simpler sum"),
-  (simplerSum([5, (-5), 1, (-1)]) == 0, "simpler sum"),
-  (simplerSum([5, 5, 1, 1]) == 12, "simpler sum"),
-]);
+Jest.(
+  Expect.(
+    describe("Sum & product", () => {
+      test("simpler product", () =>
+        expect(simplerProduct([])) |> toBe(1)
+      );
+      test("simpler product", () =>
+        expect(simplerProduct([55])) |> toBe(55)
+      );
+      test("simpler product", () =>
+        expect(simplerProduct([5, (-5), 1, (-1)])) |> toBe(25)
+      );
+      test("simpler product", () =>
+        expect(simplerProduct([5, 5, 1, 1])) |> toBe(25)
+      );
+      test("simpler sum", () =>
+        expect(simplerSum([])) |> toBe(0)
+      );
+      test("simpler sum", () =>
+        expect(simplerSum([55])) |> toBe(55)
+      );
+      test("simpler sum", () =>
+        expect(simplerSum([5, (-5), 1, (-1)])) |> toBe(0)
+      );
+      test("simpler sum", () =>
+        expect(simplerSum([5, 5, 1, 1])) |> toBe(12)
+      );
+    })
+  )
+);

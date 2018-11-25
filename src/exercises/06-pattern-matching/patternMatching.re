@@ -16,8 +16,18 @@ let isSuperman = x =>
  */
 let nonZero = x => failwith("For you to implement");
 
-Test.runAll([
-  (nonZero(0) == false, "non zero"),
-  (nonZero(500) == true, "non zero"),
-  (nonZero(-400) == true, "non zero"),
-]);
+Jest.(
+  Expect.(
+    describe("Pattern matching", () => {
+      test("non zero", () =>
+        expect(nonZero(0)) |> toBe(false)
+      );
+      test("non zero", () =>
+        expect(nonZero(500)) |> toBe(true)
+      );
+      test("non zero", () =>
+        expect(nonZero(-400)) |> toBe(true)
+      );
+    })
+  )
+);

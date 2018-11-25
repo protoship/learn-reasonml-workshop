@@ -24,7 +24,7 @@ let ints = [1, 2, 3];
 
 let sumOfMyInts = List.fold_left((total, myInt) => total + myInt, 0, ints);
 
-let () = assert (6 == sumOfMyInts);
+let () = assert(6 == sumOfMyInts);
 
 /* Now let's use List.fold_left to write some other useful List functions. */
 module MyList: {
@@ -65,7 +65,7 @@ module MyList: {
 
   let hd: list('a) => 'a;
  */
-let () = assert (List.hd([1, 2, 3]) == 1);
+let () = assert(List.hd([1, 2, 3]) == 1);
 
 /*
   Similarly, List.tl returns all but the first element of the list. It also raises
@@ -73,14 +73,14 @@ let () = assert (List.hd([1, 2, 3]) == 1);
 
   let tl: list('a) => list('a);
  */
-let () = assert (List.tl([1, 2, 3]) == [2, 3]);
+let () = assert(List.tl([1, 2, 3]) == [2, 3]);
 
 /*
   List.rev returns the reverse of the input list.
 
   let rev: list('a) => list('a);
  */
-let () = assert (List.rev([1, 2, 3]) == [3, 2, 1]);
+let () = assert(List.rev([1, 2, 3]) == [3, 2, 1]);
 
 /*
   List.mem returns a bool indicating if the given element is contained in the
@@ -88,7 +88,7 @@ let () = assert (List.rev([1, 2, 3]) == [3, 2, 1]);
 
   let mem: ('a, list('a)) => bool;
  */
-let () = assert (List.mem(3, [1, 2, 3]));
+let () = assert(List.mem(3, [1, 2, 3]));
 
 /*
   List.sort returns a sorted list in increasing order according to the specified
@@ -98,23 +98,30 @@ let () = assert (List.mem(3, [1, 2, 3]));
 
   let sort: (('a, 'a) => int, list('a)) => list('a);
  */
-let () = assert (List.sort((x, y) => x - y, [3, 1, 2]) == [1, 2, 3]);
+let () = assert(List.sort((x, y) => x - y, [3, 1, 2]) == [1, 2, 3]);
 
-let acc = ref(0);
-
-MyList.iter(
-  x =>
-    if (x > acc^) {
-      acc := x;
-    },
-  [1, 8, 5, 2, 7, 3],
+Jest.(
+  Expect.(
+    describe("Writing list operations", () => {
+      test("MyList.map", () =>
+        expect(MyList.map(x => 2 * x, [1, 2, 3, 4])) |> toBe([2, 4, 6, 8])
+      );
+      test("MyList.iter", () => {
+        let acc = ref(0);
+        MyList.iter(
+          x =>
+            if (x > acc^) {
+              acc := x;
+            },
+          [1, 8, 5, 2, 7, 3],
+        );
+        
+        expect(acc^) |> toBe(8);
+      });
+      test("MyList.filter", () =>
+        expect(MyList.filter(x => x mod 2 == 0, [1, 3, 7, 8, 9, 2]))
+        |> toBe([8, 2])
+      );
+    })
+  )
 );
-
-Test.runAll([
-  (MyList.map(x => 2 * x, [1, 2, 3, 4]) == [2, 4, 6, 8], "MyList.map"),
-  (acc^ == 8, "MyList.iter"),
-  (
-    MyList.filter(x => x mod 2 == 0, [1, 3, 7, 8, 9, 2]) == [8, 2],
-    "MyList.filter",
-  ),
-]);
