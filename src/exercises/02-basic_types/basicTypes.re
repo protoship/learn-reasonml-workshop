@@ -126,22 +126,30 @@ let () = {
 };
 
 /*
-  The lines that follow are inline tests. Each evaluates a boolean expression.
-  They are run during the build, and failures -- evaluating to false -- are
-  treated like compile errors by the build tool and editors.
+  The tests
+  ===============
 
-  We will see other kinds of inline tests later, and some interesting patterns
-  for using them.
-  While Reason supports polymorphic comparison, it is good practice to use
-  equality and comparison functions specific to each type.
+  To run all tests from all exercises once:
 
-  So, [Int.equal] is the [equal] function defined in the [Int] module. Its
-  signature is
+    $ npm test
 
-  val equal : int -> int -> bool
+  Watch mode
+  ===============
 
-  In words: [equal] takes two [int]s and returns a [bool]. The following line
-  is applying that function to two inputs, [5] and [int_average 5 5].
+  Open two shells, and in the first, start the build process:
+
+    $ npm start
+
+  In the second, start the tests running:
+
+    $ npm run test:watch
+
+  As you edit the code, the two processes will continually recompile the code
+  and rerun the tests.
+
+  You can now filter the tests by a filename (p) or a test name (t) pattern.
+  
+  Make sure all the tests in this exercise pass!
  */
 
 Jest.(

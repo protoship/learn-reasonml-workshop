@@ -23,18 +23,3 @@ These exercises are originally from [a workshop organized by Jane Street](https:
 The exercises are numerically ordered and can be found in the `src/exercises` directory. 
 
 Start by opening the first exercise in a text editor - `src/exercises/01-introduction/introduction.re`. It will tell you where to go from there. 
-
-All exercises except the first one comes with a test. Run them as you complete each exercise. For example for the second exercise, run its test with:
-
-  ```
-  node src/exercises/02-basic_types/basicTypes.bs.js
-  ```
-
-This `.bs.js` file is your Reason program (`.re`) compiled to Javascript. `.bs` stands for the [bucklescript compiler](https://bucklescript.github.io/). The `.bs.js` code is readable Javascript - give them a look if you're curious!
-
-You can also run `./run_tests` which will run all the tests automatically for you and stop at the first failing one.
-
-# Support
-
-Please feel free to raise an issue if you have any questions as you work through the exercises. You can also find help in the [Reason Discord channel](https://discord.gg/reasonml), or in the [Reason Discourse forum](https://reasonml.chat/).
-
