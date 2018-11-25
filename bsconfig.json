@@ -14,6 +14,7 @@
   "suffix": ".bs.js",
   "bs-dependencies": [
     // add your dependencies here. You'd usually install them normally through `npm install my-dependency`. If my-dependency has a bsconfig.json too, then everything will work seamlessly.
+    "@glennsl/bs-jest"
   ],
   "warnings": {
     "error": "+101"
