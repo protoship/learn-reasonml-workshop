@@ -67,12 +67,12 @@ let floatFour = 4.;
   In Reason there's no explicit return statement: functions just return the
   value of the last statement in that function.
  */
-/* let intAverage = (x, y) => failwith("For you to implement"); */
-let intAverage = (x, y) => failwith("For you to implement");
+
+let intAverage = (x, y) => 0;
 
 /* let floatAverage : (float, float) => float */
-/* let floatAverage = (x, y) => failwith("For you to implement"); */
-let floatAverage = (x, y) => failwith("For you to implement");
+
+let floatAverage = (x, y) => 0.;
 
 /*
   The following expression computes the average of 10 and 20:
@@ -125,32 +125,6 @@ let () = {
   print_endline(" and I am 5 years old");
 };
 
-/*
-  The tests
-  ===============
-
-  To run all tests from all exercises once:
-
-    $ npm test
-
-  Watch mode
-  ===============
-
-  Open two shells, and in the first, start the build process:
-
-    $ npm start
-
-  In the second, start the tests running:
-
-    $ npm run test:watch
-
-  As you edit the code, the two processes will continually recompile the code
-  and rerun the tests.
-
-  You can now filter the tests by a filename (p) or a test name (t) pattern.
-  
-  Make sure all the tests in this exercise pass!
- */
 
 Jest.(
   Expect.(

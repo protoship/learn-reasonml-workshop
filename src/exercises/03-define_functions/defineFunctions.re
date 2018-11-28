@@ -13,13 +13,13 @@ let add1 = arg => arg + 1;
 let stringAppend = (x, y) => x ++ y;
 
 /* Let's define our own functions using +, -, *, and / below. */
-let plus = (x, y) => failwith("For you to implement");
+let plus = (x, y) => 0;
 
-let times = (x, y) => failwith("For you to implement");
+let times = (x, y) => 0;
 
-let minus = (x, y) => failwith("For you to implement");
+let minus = (x, y) => 0;
 
-let divide = (x, y) => failwith("For you to implement");
+let divide = (x, y) => 0;
 
 Jest.(
   Expect.(
