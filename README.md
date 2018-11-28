@@ -12,14 +12,20 @@ These exercises are originally from [a workshop organized by Jane Street](https:
 
 # Setting Up
 
-1. Install [reason-cli](https://reasonml.github.io/docs/en/installation) globally. 
+1. Setup your editor. We recommend `VSCode` along with the [vscode-reasonml](https://github.com/reasonml-editor/vscode-reasonml) extension. If you prefer a different editor check the instructions for [other supported editors](https://reasonml.github.io/docs/en/editor-plugins.html)
 
-2. Setup your editor. We recommend `VSCode` along with the [vscode-reasonml](https://github.com/reasonml-editor/vscode-reasonml) extension. If you prefer a different editor check the instructions for [other supported editors](https://reasonml.github.io/docs/en/editor-plugins.html)
+2. Clone the repository and open the project
 
-3. Clone this repository, and run `npm install`.
+3. Run `npm install`
 
 # Workflow
 
 The exercises are numerically ordered and can be found in the `src/exercises` directory. 
 
-Start by opening the first exercise in a text editor - `src/exercises/01-introduction/introduction.re`. It will tell you where to go from there. 
+It is recommended to have two shells open. 
+
+Run `npm run start` in the first shell. It will re-compile the project on every save. This is usefull to catch compilation errors. 
+
+Run `npm run test:watch` in the second shell. It will use Jest to run all the tests. Note that tests run only when the compilation is successfull. If not - we are covered by the first shell.
+
+Tip: when Jest is running, pres `p` and enter a fragment of a filename you are working on. It will run only the tests from the matching file. 
