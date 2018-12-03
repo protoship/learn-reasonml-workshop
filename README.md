@@ -18,6 +18,8 @@ These exercises are originally from [a workshop organized by Jane Street](https:
 
 3. Clone this repository, and run `npm install`.
 
+4. Run BS watcher `run npm start`.
+
 # Workflow
 
 The exercises are numerically ordered and can be found in the `src/exercises` directory. 
