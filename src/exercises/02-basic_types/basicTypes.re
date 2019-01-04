@@ -55,7 +55,7 @@ let floatFour = 4.;
   In Reason, functions are also values! And so, functions also have type
   signatures.
 
-  In a function signature, types of parameters are enclosed within paranthesis.
+  In a function signature, types of parameters are enclosed within parenthesis.
   The return value is the described last and preceded immediately by an arrow
   [=>].
 
