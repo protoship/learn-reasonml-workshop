@@ -18,7 +18,7 @@ let () = {
 };
 
 /* Try to write [average] by reusing [add] and [half] */
-let average = (x, y) => failwith("For you to implement");
+let average = (x, y) => add(x, y) |> half;
 
 Test.runAll([
   (average(5, 5) == 5, "average"),

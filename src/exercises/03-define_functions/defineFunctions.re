@@ -7,19 +7,19 @@
   For example, here we define a function add1 that takes a single int
   argument and returns that argument plus 1.
  */
-let add1 = arg => arg + 1;
+let add1: (int) => int = arg => arg + 1;
 
 /* This function uses the built-in ++ operator to append strings. */
-let stringAppend = (x, y) => x ++ y;
+let stringAppend: (string, string) => string = (x, y) => x ++ y;
 
 /* Let's define our own functions using +, -, *, and / below. */
-let plus = (x, y) => failwith("For you to implement");
+let plus = (x, y) => x + y;
 
-let times = (x, y) => failwith("For you to implement");
+let times = (x, y) => x * y;
 
-let minus = (x, y) => failwith("For you to implement");
+let minus = (x, y) => x - y;
 
-let divide = (x, y) => failwith("For you to implement");
+let divide = (x, y) => x / y ;
 
 Test.runAll([
   (plus(1, 1) == 2, "plus"),
