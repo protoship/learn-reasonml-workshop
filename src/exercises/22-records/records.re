@@ -66,7 +66,11 @@ let () = assert (23 == addOneToAge(anExample).age);
 
   let modify_person : person -> person
  */
-let modifyPerson = (person: person) => failwith("For you to implement");
+let modifyPerson = (person: person) =>
+  switch (person.firstName) {
+  | "Jan" => {...person, age: 30}
+  | _ => {...person, numberOfCars: person.numberOfCars + 6}
+  };
 
 module ForTesting = {
   let test_ex1: person = {

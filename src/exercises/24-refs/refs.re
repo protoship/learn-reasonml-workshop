@@ -20,7 +20,57 @@ let () = x := x^ + 1;
 
   Hint: [max_int] or [min_int].
  */
-let minAndMax = lst => failwith("For you to implement");
+/* let minAndMax = lst => {
+     let largest = ref(min_int);
+     let smallest = ref(max_int);
+     lst
+     |> List.iter(x => {
+          largest :=
+            (
+              if (x > largest^) {
+                x;
+              } else {
+                largest^;
+              }
+            );
+          smallest :=
+            (
+              if (x < smallest^) {
+                x;
+              } else {
+                smallest^;
+              }
+            );
+        });
+                      Js.log((smallest^, largest^));
+
+     (smallest^, largest^);
+   }; */
+
+let minAndMax = lst => {
+  let greatest = ref(min_int);
+  let smallest = ref(max_int);
+  lst
+  |> List.iter(value => {
+       greatest :=
+         (
+           if (value > greatest^) {
+            value;
+           } else {
+             greatest^;
+           }
+         );
+       smallest :=
+         (
+           if (value < smallest^) {
+             value;
+           } else {
+             smallest^;
+           }
+         );   
+     });
+  (smallest^, greatest^);
+}; 
 
 Test.runAll([
   (minAndMax([5, 9, 2, 4, 3]) == (2, 9), "min and max"),
