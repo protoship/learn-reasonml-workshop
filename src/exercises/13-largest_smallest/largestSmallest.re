@@ -22,9 +22,9 @@ let rec smallest = xs =>
   };
 
 /* Let's rewrite them using every: */
-let simplerLargest = xs => failwith("For you to implement");
+let simplerLargest = xs => every(neg_infinity, max, xs);
 
-let simplerSmallest = xs => failwith("For you to implement");
+let simplerSmallest = xs => every(infinity, min, xs);
 
 Test.runAll([
   (simplerSmallest([]) == infinity, "simpler smallest"),
