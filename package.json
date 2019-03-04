@@ -1,6 +1,6 @@
 {
   "name": "learn-reasonml-workshop",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
@@ -12,6 +12,6 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^2.2.2"
+    "bs-platform": "4.0.18"
   }
 }
