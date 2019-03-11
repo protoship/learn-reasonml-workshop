@@ -12,7 +12,7 @@ These exercises are originally from [a workshop organized by Jane Street](https:
 
 # Setting Up
 
-1. Install [reason-cli](https://reasonml.github.io/docs/en/installation) globally. 
+1. Install [reason-cli](https://github.com/reasonml/reason-cli) globally. 
 
 2. Setup your editor. We recommend `VSCode` along with the [vscode-reasonml](https://github.com/reasonml-editor/vscode-reasonml) extension. If you prefer a different editor check the instructions for [other supported editors](https://reasonml.github.io/docs/en/editor-plugins.html)
 
