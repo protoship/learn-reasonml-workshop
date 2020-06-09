@@ -71,8 +71,7 @@ let sumOfMyInts = ints : int =>
 let () = assert (sumOfMyInts(myInts) == 15);
 
 /*
-  Exercise: use [List.fold_left] to compute the number of elements of
-  [myInts] that are even
+  Exercise: use [List.fold_left] to count even elements in [myInts]
 
   Hint: Use the infix operator `mod`.
     (4 mod 2 == 0)
