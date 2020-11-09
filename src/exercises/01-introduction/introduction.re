@@ -23,15 +23,6 @@
 
     $ npm run start
 
-  You can also execute code in Reason's REPL (rtop) directly. To start rtop from
-  your terminal run:
-
-    $ rtop
-
-  Now try pasting the code below into it.
-
-  *Note:* Use `Ctrl-d` to exit the rtop session.
-
-  Try these out and move on to the next exercise!
+  Try this out and move on to the next exercise!
  */
 let () = print_endline("Hello, World!);
