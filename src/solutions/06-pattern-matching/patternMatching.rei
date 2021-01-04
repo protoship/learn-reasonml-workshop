@@ -1,0 +1,1 @@
+let nonZero: int => bool;
