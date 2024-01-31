@@ -2,7 +2,7 @@ let add1: int => int;
 
 let square: int => int;
 
-let twice: ('a => 'a, 'a) => 'a;
+let twice: int => int;
 
 let add2: int => int;
 
