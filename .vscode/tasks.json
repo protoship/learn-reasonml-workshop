@@ -1,5 +1,5 @@
 {
-    "version": "0.1.0",
+    "version": "2.0.0",
     "command": "npm",
     "options": {
       "cwd": "${workspaceRoot}"
@@ -38,5 +38,45 @@
           "loop": true
         }
       ]
-    }
+    },
+    "tasks": [
+      {
+        "label": "npm",
+        "type": "shell",
+        "command": "npm",
+        "args": [
+          "run",
+          "start"
+        ],
+        "isBackground": true,
+        "problemMatcher": {
+          "fileLocation": "absolute",
+          "owner": "ocaml",
+          "background": {
+            "activeOnStart": false,
+            "beginsPattern": ">>>> Start compiling",
+            "endsPattern": ">>>> Finish compiling"
+          },
+          "pattern": [
+            {
+              "regexp": "^File \"(.*)\", line (\\d+)(?:, characters (\\d+)-(\\d+))?:$",
+              "file": 1,
+              "line": 2,
+              "column": 3,
+              "endColumn": 4
+            },
+            {
+              "regexp": "^(?:(?:Parse\\s+)?(Warning|[Ee]rror)(?:\\s+\\d+)?:)?\\s+(.*)$",
+              "severity": 1,
+              "message": 2,
+              "loop": true
+            }
+          ]
+        },
+        "group": {
+          "_id": "build",
+          "isDefault": false
+        }
+      }
+    ]
   }

@@ -68,11 +68,12 @@ let floatFour = 4.;
   value of the last statement in that function.
  */
 /* let intAverage = (x, y) => failwith("For you to implement"); */
-let intAverage = (x, y) => failwith("For you to implement");
+let intAverage = (x, y) => (x+y)/2;
 
 /* let floatAverage : (float, float) => float */
 /* let floatAverage = (x, y) => failwith("For you to implement"); */
-let floatAverage = (x, y) => failwith("For you to implement");
+type floatFn = (float, float) => float;
+let floatAverage: floatFn = (a, b) => (a+.b)/.2.;
 
 /*
   The following expression computes the average of 10 and 20:
@@ -85,10 +86,10 @@ let floatAverage = (x, y) => failwith("For you to implement");
 
   let firstName : string
  */
-let firstName = "Fred";
+let firstName = "Arun";
 
 /* You can also write type annotations in definitions */
-let lastName: string = "Flintstone";
+let lastName: string = "Antony";
 
 /*
   But Reason has very strong type inference, so you can most often omit types,
@@ -145,8 +146,8 @@ let () = {
  */
 Test.runAll([
   (intAverage(5, 5) == 5, "int average"),
-  (floatAverage(5., 5.) == 5., "float average"),
-  (floatAverage(5., 10.) == 7.5, "float average"),
+  (floatAverage(5., 5.) == 5.0, "float average"),
+  (floatAverage(5.0, 10.0) == 7.5, "float average"),
 ]);
 /*
   .rei files
