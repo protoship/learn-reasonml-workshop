@@ -18,7 +18,14 @@ let () = {
 };
 
 /* Try to write [average] by reusing [add] and [half] */
-let average = (x, y) => failwith("For you to implement");
+let average = (x, y) => (x+y)/2;
+
+let () = {
+ let sq = square(5);
+ let add = add(sq, sq);
+ let avg =  string_of_int(average(add, add));
+  Js.log("(5^2)/2 = " ++ avg);
+}
 
 Test.runAll([
   (average(5, 5) == 5, "average"),
