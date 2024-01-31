@@ -13,15 +13,17 @@ let add1 = arg => arg + 1;
 let stringAppend = (x, y) => x ++ y;
 
 /* Let's define our own functions using +, -, *, and / below. */
-let plus = (x, y) => failwith("For you to implement");
+let plus = (x, y) => x+y;
 
-let times = (x, y) => failwith("For you to implement");
+let times = (x, y) => x*y;
 
-let minus = (x, y) => failwith("For you to implement");
+let minus = (x, y) => x-y;
 
-let divide = (x, y) => failwith("For you to implement");
+let divide = (x, y) => x/y;
 
 Test.runAll([
+  (add1(1) == 2, "add1"),
+  (stringAppend("Hello","World") == "HelloWorld", "stringAppend"),
   (plus(1, 1) == 2, "plus"),
   (plus(50, -1) == 49, "plus"),
   (times(8, 8) == 64, "times"),
