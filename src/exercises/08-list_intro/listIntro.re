@@ -21,7 +21,11 @@ let rec length = lst =>
   };
 
 /* Write a function to add up the elements of a list by matching on it. */
-let rec sum = lst => failwith("For you to implement");
+let rec sum = lst => 
+switch(lst) {
+  | [] => 0
+  | [hd, ...tl] => hd + sum(tl)
+};
 
 /*
   The signature for the append operator is
@@ -38,6 +42,10 @@ let listAppend = (first, second) => first @ second;
 let newHead = (hd, rest) => [hd, ...rest];
 
 Test.runAll([
+  (newHead(5, [1]) == [5,1], "newHead"),
+  (listAppend([5],[2]) == [5,2], "listAppend"),
+  (length([]) == 0, "length"),
+  (length([0,1]) == 2, "length"),
   (sum([]) == 0, "sum"),
   (sum([55]) == 55, "sum"),
   (sum([5, (-5), 1, (-1)]) == 0, "sum"),
