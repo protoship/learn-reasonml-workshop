@@ -75,7 +75,7 @@ let rec product = xs =>
 let rec every = (answer, combine, xs) => 
 switch(xs) {
   | [] => answer
-  | [x, ...rest] => combine(x, every(answer, combine, xs)) 
+  | [x, ...xs] => combine(x, every(answer, combine, xs)) 
 };
 
 /* Now let's rewrite sum and product in just one line each using every */
