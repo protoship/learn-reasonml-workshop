@@ -31,7 +31,12 @@ assert (whatNumberAmIThinking(Some(7)) == "My number is: 7");
   ints and returns an int option. It should return None if [divisor = 0], and
   otherwise returns [Some(x)] where [x] is the division result
  */
-let safeDivide = (~dividend, ~divisor) => failwith("For you to implement");
+let safeDivide = (~dividend, ~divisor) => 
+switch(divisor){
+ | 0 => None
+ | x =>  Some(dividend / x) 
+};
+
 
 Test.runAll([
   (
