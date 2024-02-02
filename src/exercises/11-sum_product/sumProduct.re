@@ -34,11 +34,12 @@ let rec upTo = (answer, combine, x) =>
   };
 
 /* Now we can write our original functions in one line each! */
+
 let simplerAddEveryNumberUpTo = x => upTo(0, plus, x);
 
 let simplerFactorial = x => upTo(1, times, x);
 
-/*
+/* []
   Note that with infix operators like + and *, you can actually pass them as
   functions! You can do this by writing ( + ) and ( * ). So another way to
   write the above two functions would be:
@@ -71,14 +72,23 @@ let rec product = xs =>
 
  Let's write the common parts just once:
  */
-let rec every = (answer, combine, xs) => failwith("For you to implement");
+let rec every = (answer, combine, xs) => 
+switch(xs) {
+  | [] => answer
+  | [x, ...rest] => combine(x, every(answer, combine, xs)) 
+};
 
 /* Now let's rewrite sum and product in just one line each using every */
-let simplerSum = xs => failwith("For you to implement");
 
-let simplerProduct = xs => failwith("For you to implement");
+let simplerSum = xs => every(0, plus, xs);
+
+let simplerProduct = xs => every(1, times, xs);
 
 Test.runAll([
+  (addEveryNumberUpTo(5) == 15, "addEveryNumberUpTo"),
+  (factorial(5) == 25, "factorial"),
+  (simplerAddEveryNumberUpTo(5) == 15, "simplerAddEveryNumberUpTo"),
+  (simplerFactorial(4) == 24, "simplerFactorial"),
   (simplerProduct([]) == 1, "simpler product"),
   (simplerProduct([55]) == 55, "simpler product"),
   (simplerProduct([5, (-5), 1, (-1)]) == 25, "simpler product"),
