@@ -29,7 +29,7 @@
 
   int four;
  */
-let four = 4;
+// let four = 4;
 
 /*
   floatFour is a value with the type float. We write the signature like this:
@@ -46,7 +46,7 @@ let four = 4;
   Try inserting an incorrect signature for [floatFour] to see what error the
   compiler gives you.
  */
-let floatFour = 4;
+// let floatFour = 4;
 
 /*
   Function signatures

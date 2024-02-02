@@ -6,7 +6,7 @@
   Looking at just the signature, it's not obvious which int argument is
   the dividend and which is the divisor.
  */
-let divide = (dividend, divisor) => dividend / divisor;
+// let divide = (dividend, divisor) => dividend / divisor;
 
 /*
   We can fix this using labelled arguments.
@@ -43,9 +43,15 @@ let divide = (~dividend, ~divisor) => dividend / divisor;
   Now implement [modulo(~dividend, ~divisor)] using our version of divide with
   labelled arguments (e.g. [modulo(~dividend:7, ~divisor:2)] should equal 1)
  */
-let modulo = (~dividend, ~divisor) => failwith("For you to implement");
+let modulo = (~dividend, ~divisor) => 
+{
+   let a = dividend;
+  let b = divisor;
+  divide(~dividend = a, ~divisor = b)
+};
 
 Test.runAll([
+  (divide(~dividend=17, ~divisor=5) == 2, "divide"),
   (modulo(~dividend=17, ~divisor=5) == 2, "modulo"),
   (modulo(~dividend=99, ~divisor=9) == 0, "modulo"),
 ]);
