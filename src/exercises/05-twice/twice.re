@@ -23,9 +23,9 @@ let square = x => x*x;
 let twice = (x) => x*2;
 
 /* Now that we have twice, write add2 and raiseToTheFourth */
-let add2 = x => x+2; /* Hint: use add1 */
+let add2 = y => add1(y) + 1; /* Hint: use add1 */
 
-let raiseToTheFourth =  square; /* Hint: use square */
+let raiseToTheFourth = y => square(y) * square(y); /* Hint: use square */
 
 Test.runAll([
   (add1(4) == 5, "add1"),
@@ -34,5 +34,5 @@ Test.runAll([
   (twice(3) == 6, "twice"),
   (add2(1335) == 1337, "add2"),
   (raiseToTheFourth(1) == 1, "raiseToTheFourth"),
-  (raiseToTheFourth(10) == 100, "raiseToTheFourth"),
+  (raiseToTheFourth(10) == 10000, "raiseToTheFourth"),
 ]);
