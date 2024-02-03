@@ -75,14 +75,18 @@ let rec product = xs =>
 let rec every = (answer, combine, xs) => 
 switch(xs) {
   | [] => answer
-  | [x, ...xs] => combine(x, every(answer, combine, xs)) 
+  | [x, ...xs] => combine(x, every(answer, combine, xs));
 };
 
 /* Now let's rewrite sum and product in just one line each using every */
 
-let simplerSum = xs => every(0, plus, xs);
+// let simplerSum = xs => every(0, plus, xs);
 
-let simplerProduct = xs => every(1, times, xs);
+// let simplerProduct = xs => every(1, times, xs);
+
+let simplerSum = xs => every(0, (x, acc) => x + acc, xs);
+
+let simplerProduct = xs => every(1, (x, acc) => x * acc, xs);
 
 Test.runAll([
   (addEveryNumberUpTo(5) == 15, "addEveryNumberUpTo"),
