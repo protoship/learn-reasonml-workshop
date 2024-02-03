@@ -2,7 +2,7 @@
 let rec every = (answer, combine, xs) =>
   switch (xs) {
   | [] => answer
-  | [x, ...xs] => combine(every(answer, combine, xs))
+  | [x, ...xs] => combine(x, every(answer, combine, xs))
   };
 
 /*
@@ -23,9 +23,13 @@ let rec smallest = xs =>
 
 /* Let's rewrite them using every: */
 
-let largest = xs => every(neg_infinity, largest, xs);
+// let largest = xs => every(neg_infinity, largest, xs);
 
-let smallest = xs => every(infinity, smallest, xs);
+// let smallest = xs => every(infinity, smallest, xs);
+
+let simplerLargest = xs => every(neg_infinity, (x, acc) => max(x, acc), xs);
+
+let simplerSmallest = xs => every(infinity, (x, acc) => min(x, acc), xs);
 
 Test.runAll([
   (simplerSmallest([]) == infinity, "simpler smallest"),
