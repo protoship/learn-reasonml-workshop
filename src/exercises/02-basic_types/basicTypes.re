@@ -46,7 +46,7 @@
   Try inserting an incorrect signature for [floatFour] to see what error the
   compiler gives you.
  */
-// let floatFour = 4;
+let floatFour = 4.;
 
 /*
   Function signatures
