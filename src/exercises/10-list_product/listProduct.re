@@ -1,7 +1,7 @@
 /* Now let's write a function to multiply the elements of a list. */
 let rec product = xs =>
   switch (xs) {
-  | [] => 0
+  | [] => 1
   | [hd, ...tl] => hd * product(tl)
   };
   

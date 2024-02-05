@@ -90,7 +90,7 @@ let simplerProduct = xs => every(1, (x, acc) => x * acc, xs);
 
 Test.runAll([
   (addEveryNumberUpTo(5) == 15, "addEveryNumberUpTo"),
-  (factorial(5) == 25, "factorial"),
+  (factorial(5) == 120, "factorial"),
   (simplerAddEveryNumberUpTo(5) == 15, "simplerAddEveryNumberUpTo"),
   (simplerFactorial(4) == 24, "simplerFactorial"),
   (simplerProduct([]) == 1, "simpler product"),

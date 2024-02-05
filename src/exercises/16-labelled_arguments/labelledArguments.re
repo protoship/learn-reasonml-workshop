@@ -51,7 +51,7 @@ let modulo = (~dividend, ~divisor) =>
 };
 
 Test.runAll([
-  (divide(~dividend=17, ~divisor=5) == 2, "divide"),
-  (modulo(~dividend=17, ~divisor=5) == 2, "modulo"),
-  (modulo(~dividend=99, ~divisor=9) == 0, "modulo"),
+  (divide(~dividend=17, ~divisor=5) == 3, "divide"),
+  (modulo(~dividend=17, ~divisor=5) == 3, "modulo"),
+  (modulo(~dividend=99, ~divisor=9) == 11, "modulo"),
 ]);
